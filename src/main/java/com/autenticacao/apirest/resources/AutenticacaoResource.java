@@ -1,6 +1,7 @@
 package com.autenticacao.apirest.resources;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.autenticacao.apirest.repository.AutenticacaoRepository;
@@ -57,4 +59,16 @@ public class AutenticacaoResource {
 				public Autenticacao atualizaAutenticacao(@RequestBody Autenticacao autenticacao) {
 					return autenticacaoRepository.save(autenticacao);
 				}
+					
+					//Fazer login no APP
+				@PostMapping("/login")
+				public boolean login(@RequestBody Autenticacao user) {
+
+					Autenticacao userLoggedIn = this.autenticacaoRepository.findByEmailAndPassword(user.getEmail(), user.getPassword());
+
+					return Objects.nonNull(userLoggedIn);
+				}
 }
+
+
+
