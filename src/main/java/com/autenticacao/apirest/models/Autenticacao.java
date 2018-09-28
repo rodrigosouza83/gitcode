@@ -20,12 +20,12 @@ public class Autenticacao implements Serializable{
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -36,12 +36,12 @@ public class Autenticacao implements Serializable{
 		this.email = email;
 	}
 
-	public int getSenha() {
-		return senha;
+	public int getPassword() {
+		return password;
 	}
 
-	public void setSenha(int senha) {
-		this.senha = senha;
+	public void setPassword(int password) {
+		this.password = password;
 	}
 
 	private static final long serialVersionUID = 1L;
@@ -50,11 +50,11 @@ public class Autenticacao implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
-	private String nome;
+	private String name;
 	
 	private String email;
 	
-	private int senha;
+	private int password;
 	
 
 }

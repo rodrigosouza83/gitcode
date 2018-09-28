@@ -9,5 +9,9 @@ import com.autenticacao.apirest.models.Autenticacao;
 public interface AutenticacaoRepository extends JpaRepository<Autenticacao, Long> {
 	
 	Autenticacao findById(long id);
+	Autenticacao findByEmail(String email, int senha);
+	
+	
+	
 
 }
