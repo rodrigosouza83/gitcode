@@ -12,9 +12,7 @@ import javax.persistence.Table;
 @Table(name="TB_AUTENTICACAO")
 public class Autenticacao implements Serializable{
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	public String getName() {
