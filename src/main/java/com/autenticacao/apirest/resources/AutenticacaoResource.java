@@ -1,6 +1,7 @@
 package com.autenticacao.apirest.resources;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,7 +36,7 @@ public class AutenticacaoResource {
 	
 	//Esse método irá consultar um aluno apenas buscando pelo ID.
 	@GetMapping("/aluno/{id}")
-	public Autenticacao listaAutenticacaoUnica(@PathVariable(value="id") long id){
+	public Optional<Autenticacao> listaAutenticacaoUnica(@PathVariable(value="id") Long id){
 		return autenticacaoRepository.findById(id);
 	}
 	
