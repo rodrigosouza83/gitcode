@@ -62,7 +62,7 @@ public class AutenticacaoResource {
 					
 					//Fazer login no APP
 				@PostMapping("/login")
-				public boolean login(@RequestBody Autenticacao user) {
+				public Boolean login(@RequestBody Autenticacao user) {
 
 					Autenticacao userLoggedIn = this.autenticacaoRepository.findByEmailAndPassword(user.getEmail(), user.getPassword());
 

@@ -9,11 +9,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TB_AUTENTICACAO")
+@Table(name="TAB_AUTENTICACAO")
 public class Autenticacao implements Serializable{
 	
+
 	
 	private static final long serialVersionUID = 1L;
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 
 	public String getName() {
 		return name;
